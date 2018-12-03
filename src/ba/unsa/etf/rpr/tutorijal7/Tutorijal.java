@@ -1,8 +1,10 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
 import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -69,6 +71,17 @@ public class Tutorijal {
                 if (gradovi.get(i).getNaziv().equals(d.getGlavniGrad().getNaziv()))
                     d.getGlavniGrad().setTemperature(gradovi.get(i).getTemperature());
         return un;
+    }
+
+    public static void zapisiXml(UN un) {
+        try {
+            XMLEncoder izlaz = new XMLEncoder(new FileOutputStream("un.xml"));
+            izlaz.writeObject(un);
+            izlaz.close();
+        }
+        catch(Exception e) {
+            System.out.println("Greška: " + e);
+        }
     }
 
     public static void main(String[] args) {
