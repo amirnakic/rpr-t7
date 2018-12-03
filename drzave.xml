@@ -17,7 +17,14 @@
                         <string>km2</string>
                     </void>
                     <void property="glavniGrad">
-                        <string>Sarajevo</string>
+                        <object class="ba.unsa.etf.rpr.tutorijal7.Grad">
+                            <void property="naziv">
+                                <string>Sarajevo</string>
+                            </void>
+                            <void property="brojStanovnika">
+                                <int>400000</int>
+                            </void>
+                        </object>
                     </void>
                 </object>
             </void>
@@ -36,7 +43,14 @@
                         <string>km2</string>
                     </void>
                     <void property="glavniGrad">
-                        <string>Zagreb</string>
+                        <object class="ba.unsa.etf.rpr.tutorijal7.Grad">
+                            <void property="naziv">
+                                <string>Zagreb</string>
+                            </void>
+                            <void property="brojStanovnika">
+                                <int>790017</int>
+                            </void>
+                        </object>
                     </void>
                 </object>
             </void>
@@ -55,7 +69,14 @@
                         <string>km2</string>
                     </void>
                     <void property="glavniGrad">
-                        <string>Beograd</string>
+                        <object class="ba.unsa.etf.rpr.tutorijal7.Grad">
+                            <void property="naziv">
+                                <string>Beograd</string>
+                            </void>
+                            <void property="brojStanovnika">
+                                <int>1659440</int>
+                            </void>
+                        </object>
                     </void>
                 </object>
             </void>
