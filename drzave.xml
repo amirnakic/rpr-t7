@@ -1,26 +1,64 @@
-<drzave>
-    <drzava stanovnika="3531159">
-        <naziv> Bosna i Hercegovina </naziv>
-        <glavnigrad stanovnika="400000">
-            <naziv> Sarajevo </naziv>
-        </glavnigrad>
-        <povrsina jedinica="km2">51129</povrsina>
-        <moneta naziv="KM"/>
-    </drzava>
-    <drzava stanovnika="4784265">
-        <naziv> Hrvatska </naziv>
-        <glavnigrad stanovnika="790017">
-            <naziv> Zagreb </naziv>
-        </glavnigrad>
-        <povrsina jedinica="km2">87661</povrsina>
-        <moneta naziv="HRK"/>
-    </drzava>
-    <drzava stanovnika="7020858">
-        <naziv> Srbija </naziv>
-        <glavnigrad stanovnika="1659440">
-            <naziv> Beograd </naziv>
-        </glavnigrad>
-        <povrsina jedinica="km2">77474</povrsina>
-        <moneta naziv="RSD"/>
-    </drzava>
-</drzave>
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_191" class="java.beans.XMLDecoder">
+    <object class="ba.unsa.etf.rpr.tutorijal7.UN" id="UN0">
+        <void property="drzave">
+            <void method="add">
+                <object class="ba.unsa.etf.rpr.tutorijal7.Drzava">
+                    <void property="naziv">
+                        <string>Bosna i Hercegovina</string>
+                    </void>
+                    <void property="brojStanovnika">
+                        <int>3531159</int>
+                    </void>
+                    <void property="povrsina">
+                        <double>51129</double>
+                    </void>
+                    <void property="jedinicaZaPovrsinu">
+                        <string>km2</string>
+                    </void>
+                    <void property="glavniGrad">
+                        <string>Sarajevo</string>
+                    </void>
+                </object>
+            </void>
+            <void method="add">
+                <object class="ba.unsa.etf.rpr.tutorijal7.Drzava">
+                    <void property="naziv">
+                        <string>Hrvatska</string>
+                    </void>
+                    <void property="brojStanovnika">
+                        <int>4784265</int>
+                    </void>
+                    <void property="povrsina">
+                        <double>87661</double>
+                    </void>
+                    <void property="jedinicaZaPovrsinu">
+                        <string>km2</string>
+                    </void>
+                    <void property="glavniGrad">
+                        <string>Zagreb</string>
+                    </void>
+                </object>
+            </void>
+            <void method="add">
+                <object class="ba.unsa.etf.rpr.tutorijal7.Drzava">
+                    <void property="naziv">
+                        <string>Srbija</string>
+                    </void>
+                    <void property="brojStanovnika">
+                        <int>7020858</int>
+                    </void>
+                    <void property="povrsina">
+                        <double>77474</double>
+                    </void>
+                    <void property="jedinicaZaPovrsinu">
+                        <string>km2</string>
+                    </void>
+                    <void property="glavniGrad">
+                        <string>Beograd</string>
+                    </void>
+                </object>
+            </void>
+        </void>
+    </object>
+</java>
