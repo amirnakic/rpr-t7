@@ -16,39 +16,44 @@ public class Tutorijal {
             System.out.println("Datoteka mjerenja.txt ne postoji ili se ne može otvoriti.");
             return rezultat;
         }
-
-        while (ulaz.hasNextLine()) {
-            String tmp = ulaz.nextLine();
-            String grad = "";
-            int velicina = 0;
-            for (int i = 0; i < tmp.length(); i++)
-                if (tmp.charAt(i) == ',') velicina++;
-            double[] temperature = new double[velicina];
-            int brojacZareza = 0, indeks = 0, pocetakProslog = 0;
-            for (int i = 0; i < tmp.length(); i++) {
-                if (tmp.charAt(i) == ',' && brojacZareza == 0) {
-                    grad = tmp.substring(0, i);
-                    pocetakProslog = i + 1;
-                    brojacZareza++;
-                } else if (tmp.charAt(i) == ',') {
-                    if (brojacZareza == 1001) throw new ArrayStoreException();
-                    temperature[indeks] = Double.parseDouble(tmp.substring(pocetakProslog, i));
-                    pocetakProslog = i + 1;
-                    brojacZareza++;
-                    indeks++;
-                } else if (i == tmp.length() - 1) {
-                    if (brojacZareza == 1001) throw new ArrayStoreException();
-                    temperature[indeks] = Double.parseDouble(tmp.substring(pocetakProslog, i + 1));
+        try {
+            while (ulaz.hasNextLine()) {
+                String tmp = ulaz.nextLine();
+                String grad = "";
+                int velicina = 0;
+                for (int i = 0; i < tmp.length(); i++)
+                    if (tmp.charAt(i) == ',') velicina++;
+                double[] temperature = new double[velicina];
+                int brojacZareza = 0, indeks = 0, pocetakProslog = 0;
+                for (int i = 0; i < tmp.length(); i++) {
+                    if (tmp.charAt(i) == ',' && brojacZareza == 0) {
+                        grad = tmp.substring(0, i);
+                        pocetakProslog = i + 1;
+                        brojacZareza++;
+                    } else if (tmp.charAt(i) == ',') {
+                        if (brojacZareza == 1001) throw new ArrayStoreException();
+                        temperature[indeks] = Double.parseDouble(tmp.substring(pocetakProslog, i));
+                        pocetakProslog = i + 1;
+                        brojacZareza++;
+                        indeks++;
+                    } else if (i == tmp.length() - 1) {
+                        if (brojacZareza == 1001) throw new ArrayStoreException();
+                        temperature[indeks] = Double.parseDouble(tmp.substring(pocetakProslog, i + 1));
+                    }
                 }
+                Grad g = new Grad(grad, 0, temperature);
+                rezultat.add(g);
             }
-            Grad g = new Grad(grad, 0, temperature);
-            rezultat.add(g);
+        } catch (Exception e) {
+            System.out.println("Greška pri čitanju datoteke.");
+            System.out.println("Greška: " + e);
+        } finally {
+            ulaz.close();
         }
-
         return rezultat;
     }
 
     public static void main(String[] args) {
-        
+
     }
 }
